@@ -1,10 +1,13 @@
 const express = require('express')
 const app = express()
-const port = 3000
+require('dotenv').config();
+
+// Ambil port dari .env atau default ke 5000
+const PORT = process.env.PORT || 5000
 
 const routes = require('./routes');
 app.use('/api',routes);
 
-app.listen(port, () => {
-  console.log("app listening on port : ", port)
+app.listen(PORT, () => {
+  console.log("app listening on port : ", PORT)
 })
